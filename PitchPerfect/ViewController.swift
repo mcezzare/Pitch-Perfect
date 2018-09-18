@@ -22,9 +22,13 @@ class ViewController: UIViewController {
     }
 
 
-    @IBAction func recordAudio(_ sender: Any) {
+    @IBAction func recordAudio(_ sender: AnyObject) {
         print("record button was pressed")
         recordingLabel.text = "Recording in Progress"
+    }
+    @IBAction func stopRecording(_ sender: AnyObject) {
+        print("stop recording button was pressed")
+        recordingLabel.text = "Tap to Record"
     }
 }
 

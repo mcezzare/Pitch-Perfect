@@ -33,7 +33,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YbP-wk-0H5">
-                                <rect key="frame" x="110" y="482.5" width="155" height="155"/>
+                                <rect key="frame" x="156" y="482.5" width="64" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="64" id="ROh-Q7-8PY"/>
+                                    <constraint firstAttribute="height" constant="64" id="d5I-vQ-CWl"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="64" id="qTv-aU-9Va"/>
+                                    <constraint firstAttribute="width" constant="64" id="tgg-iQ-FnR"/>
+                                </constraints>
                                 <state key="normal" image="Stop"/>
                                 <connections>
                                     <action selector="stopRecording:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6S5-Ge-YVK"/>
@@ -59,7 +65,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="24.637681159420293" y="29.347826086956523"/>
+            <point key="canvasLocation" x="23.199999999999999" y="29.23538230884558"/>
         </scene>
     </scenes>
     <resources>

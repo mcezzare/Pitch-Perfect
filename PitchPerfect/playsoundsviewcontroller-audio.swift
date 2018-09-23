@@ -53,6 +53,7 @@ extension PlaySoundsViewController: AVAudioPlayerDelegate {
         
         // node for adjusting rate/pitch
         let changeRatePitchNode = AVAudioUnitTimePitch()
+        // ou seja se a variavel altura não é nil entra no if
         if let pitch = pitch {
             changeRatePitchNode.pitch = pitch
         }
@@ -85,7 +86,7 @@ extension PlaySoundsViewController: AVAudioPlayerDelegate {
         
         // schedule to play and start the engine!
         audioPlayerNode.stop()
-        audioPlayerNode.scheduleFile(audioFile, at: nil) {
+        audioPlayerNode.scheduleFile(audioFile, at: nil) { // this is a trailing closure
             
             var delayInSeconds: Double = 0
             

@@ -28,6 +28,7 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     }
     
 //    override func didReceiveMemoryWarning() {
+    
 //        super.didReceiveMemoryWarning()
 //        // Dispose of any resources that can be recreated.
 //    }
@@ -48,9 +49,9 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
         try! session.setCategory(AVAudioSessionCategoryPlayAndRecord, with:AVAudioSessionCategoryOptions.defaultToSpeaker)
         
         try! audioRecorder = AVAudioRecorder(url:filePath!, settings:[:])
-        //After implement the AVAudioRecorderDelegate protocol
+        // MARK: After implement the AVAudioRecorderDelegate protocol
         audioRecorder.delegate = self
-        //End of delegation
+        // MARK: End of delegation
         audioRecorder.isMeteringEnabled = true
         audioRecorder.prepareToRecord()
         audioRecorder.record()
@@ -66,7 +67,7 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
         try! audioSession.setActive(false)
     }
     
-    //After implement the AVAudioRecorderDelegate protocol
+    // MARK: - Audio Recorder Delegate - function implemented after implement the AVAudioRecorderDelegate protocol
     func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {
         if flag {
                 performSegue(withIdentifier:"stopRecording", sender: audioRecorder.url)

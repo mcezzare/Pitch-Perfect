@@ -32,6 +32,30 @@ class PlaySoundsViewController: UIViewController {
     
     @IBAction func playSoundForButton(_ sender: UIButton) {
         print("Play Sound button pressed")
+        var optionPressed = ""
+        switch(ButtonType(rawValue: sender.tag)!) {
+        case .slow:
+            playSound(rate: 0.5)
+            optionPressed = "slow"
+        case .fast:
+            playSound(rate: 1.5)
+            optionPressed = "fast"
+        case .highPitch:
+            playSound(pitch: 1000)
+            optionPressed = "high pitch"
+        case .lowPitch:
+            playSound(pitch: -1000)
+            optionPressed = "low pitch"
+        case .echo:
+            playSound(echo: true)
+            optionPressed = "echo"
+        case .reverb:
+            playSound(reverb: true)
+            optionPressed = "reverb"
+        }
+        print("Playing in \(optionPressed)")
+        
+        configureUI(.playing)
     }
 
     @IBAction func stopButtonPressed(_ sender: AnyObject) {
@@ -52,7 +76,7 @@ class PlaySoundsViewController: UIViewController {
 //    }
     
     override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(<#T##animated: Bool##Bool#>)
+//        super.viewWillAppear(animated)
         configureUI(.notPlaying)
     }
 

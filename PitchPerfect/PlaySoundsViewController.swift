@@ -62,22 +62,13 @@ class PlaySoundsViewController: UIViewController {
         print("Stop audio button pressed")
         stopAudio()
     }
-
-    
+    // MARK: Iniate Audio Setup
     override func viewDidLoad() {
         super.viewDidLoad()
         setupAudio()
-
-        // Do any additional setup after loading the view.
     }
 
-//    override func didReceiveMemoryWarning() {
-//        super.didReceiveMemoryWarning()
-//        // Dispose of any resources that can be recreated.
-//    }
-    
     override func viewWillAppear(_ animated: Bool) {
-//        super.viewWillAppear(animated)
         configureUI(.notPlaying)
     }
 

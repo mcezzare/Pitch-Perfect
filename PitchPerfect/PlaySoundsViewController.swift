@@ -60,6 +60,7 @@ class PlaySoundsViewController: UIViewController {
 
     @IBAction func stopButtonPressed(_ sender: AnyObject) {
         print("Stop audio button pressed")
+        stopAudio()
     }
 
     

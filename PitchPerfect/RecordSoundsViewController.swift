@@ -36,9 +36,10 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
 
     @IBAction func recordAudio(_ sender: AnyObject) {
         print("record button was pressed")
-        recordingLabel.text = "Recording in Progress"
-        stopRecordingButton.isEnabled = true
-        recordButton.isEnabled = false
+        configureUi(isRecording: true, labelString: "Recording in Progress")
+//        recordingLabel.text = "Recording in Progress"
+//        stopRecordingButton.isEnabled = true
+//        recordButton.isEnabled = false
         
         let dirPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as String
         let recordingName = "recordedVoice.wav"
@@ -59,9 +60,10 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     
     @IBAction func stopRecording(_ sender: AnyObject) {
         print("stop recording button was pressed")
-        stopRecordingButton.isEnabled = false
-        recordButton.isEnabled = true
-        recordingLabel.text = "Tap to Record"
+        configureUi(isRecording: false, labelString: "Tap to Record")
+//        stopRecordingButton.isEnabled = false
+//        recordButton.isEnabled = true
+//        recordingLabel.text = "Tap to Record"
         audioRecorder.stop()
         let audioSession = AVAudioSession.sharedInstance()
         try! audioSession.setActive(false)
@@ -83,6 +85,24 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
             let recordedAudioURL = sender as! URL
             playSoundVC.recordedAudioURL = recordedAudioURL
         }
+    }
+    
+    // MARK: Configure UI for Enabling and Disable Buttons and fix Labels
+    func configureUi(isRecording: Bool, labelString: String){
+        /* WORKING
+        if isRecording {
+            recordingLabel.text = labelString
+            stopRecordingButton.isEnabled = true
+            recordButton.isEnabled = false
+        } else {
+            stopRecordingButton.isEnabled = false
+            recordButton.isEnabled = true
+            recordingLabel.text = labelString
+        }
+        */
+        recordingLabel.text = labelString
+        stopRecordingButton.isEnabled = isRecording
+        recordButton.isEnabled = !isRecording
     }
 
 }

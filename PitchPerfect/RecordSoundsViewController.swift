@@ -22,12 +22,7 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
         configureUi(isRecording: false, labelString: "Tap to Record")
 
     }
-
-    override func viewWillAppear(_ animated: Bool) {
-        print("viewWillAppear called")
-        super.viewWillAppear(animated)
-    }
-    
+  
     @IBAction func recordAudio(_ sender: AnyObject) {
         print("record button was pressed")
         configureUi(isRecording: true, labelString: "Recording in Progress")

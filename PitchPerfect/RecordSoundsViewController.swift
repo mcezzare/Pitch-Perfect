@@ -20,9 +20,9 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         configureUi(isRecording: false, labelString: "Tap to Record")
-
+        
     }
-  
+    
     @IBAction func recordAudio(_ sender: AnyObject) {
         print("record button was pressed")
         configureUi(isRecording: true, labelString: "Recording in Progress")
@@ -55,8 +55,8 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     // MARK: - Audio Recorder Delegate - function implemented after implement the AVAudioRecorderDelegate protocol
     func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {
         if flag {
-                performSegue(withIdentifier:"stopRecording", sender: audioRecorder.url)
-                print("Finished recording")
+            performSegue(withIdentifier:"stopRecording", sender: audioRecorder.url)
+            print("Finished recording")
         } else {
             print("Recording was not successful")
         }
@@ -76,6 +76,15 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
         stopRecordingButton.isEnabled = isRecording
         recordButton.isEnabled = !isRecording
     }
-
+   
+    // MARK: - Review Suggestion
+    /*
+     func configureUISuggested(_ isRecording:Bool = false) {
+         recordingLabel.text = isRecording ? "Recording in progress": "Tap to Record"
+         recordButton.isEnabled = !isRecording
+         stopRecordingButton.isEnabled = isRecording
+     }
+    */
+    
 }
 

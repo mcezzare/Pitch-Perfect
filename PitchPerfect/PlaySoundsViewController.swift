@@ -57,7 +57,7 @@ class PlaySoundsViewController: UIViewController {
         
         configureUI(.playing)
     }
-
+    
     @IBAction func stopButtonPressed(_ sender: AnyObject) {
         print("Stop audio button pressed")
         stopAudio()
@@ -67,9 +67,19 @@ class PlaySoundsViewController: UIViewController {
         super.viewDidLoad()
         setupAudio()
     }
-
+    
+    
     override func viewWillAppear(_ animated: Bool) {
         configureUI(.notPlaying)
+//        keepScaleAspectFitForButtons()
     }
-
+    /*
+     let buttons = [slowButton,fastButton,highPitchButton,lowPitchButton,echoButton,reverbButton,stopButton]
+    //MARK:
+    func keepScaleAspectFitForButtons(){
+        for button in buttons as! [UIButton] {
+            button.imageView?.contentMode = .scaleAspectFit
+        }
+    }
+ */
 }

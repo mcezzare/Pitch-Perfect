@@ -71,15 +71,15 @@ class PlaySoundsViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         configureUI(.notPlaying)
-//        keepScaleAspectFitForButtons()
+        //        keepScaleAspectFitForButtons()
     }
-    /*
-     let buttons = [slowButton,fastButton,highPitchButton,lowPitchButton,echoButton,reverbButton,stopButton]
-    //MARK:
+    
+    
+    // MARK: Keep Aspect of buttons
     func keepScaleAspectFitForButtons(){
+        let buttons = [slowButton,fastButton,highPitchButton,lowPitchButton,echoButton,reverbButton,stopButton]
         for button in buttons as! [UIButton] {
             button.imageView?.contentMode = .scaleAspectFit
         }
     }
- */
 }

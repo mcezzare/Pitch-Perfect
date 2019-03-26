@@ -27,8 +27,6 @@ Find any typos? Have another resource you think should be included? Contribution
 
 First, fork this repository. I'll be happy to know if this example is useful for you.
 
-![Fork Icon](repository-media/fork-icon.png)
-
 Next, clone this repository to your desktop to make changes.
 
 Once you've pushed changes to your local repository, you can create a pull request with your suggestion.

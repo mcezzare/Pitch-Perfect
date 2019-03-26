@@ -10,6 +10,8 @@ import UIKit
 import AVFoundation
 class PlaySoundsViewController: UIViewController {
     
+    // MARK: - Outlets
+    
     @IBOutlet weak var slowButton: UIButton!
     @IBOutlet weak var fastButton: UIButton!
     @IBOutlet weak var highPitchButton: UIButton!
@@ -17,6 +19,8 @@ class PlaySoundsViewController: UIViewController {
     @IBOutlet weak var echoButton: UIButton!
     @IBOutlet weak var reverbButton: UIButton!
     @IBOutlet weak var stopButton: UIButton!
+    
+    // MARK: - Properties
     
     var recordedAudioURL:URL!
     var audioFile:AVAudioFile!
@@ -28,7 +32,19 @@ class PlaySoundsViewController: UIViewController {
         case slow = 0, fast, highPitch, lowPitch, echo, reverb
     }
     
+    // MARK: - Life Cycle
     
+    // MARK: Iniate Audio Setup
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupAudio()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        configureUI(.notPlaying)
+    }
+    
+    // MARK: - Actions
     
     @IBAction func playSoundForButton(_ sender: UIButton) {
         print("Play Sound button pressed")
@@ -57,19 +73,10 @@ class PlaySoundsViewController: UIViewController {
         
         configureUI(.playing)
     }
-
+    
     @IBAction func stopButtonPressed(_ sender: AnyObject) {
         print("Stop audio button pressed")
         stopAudio()
     }
-    // MARK: Iniate Audio Setup
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        setupAudio()
-    }
-
-    override func viewWillAppear(_ animated: Bool) {
-        configureUI(.notPlaying)
-    }
-
+    
 }

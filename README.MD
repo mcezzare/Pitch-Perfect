@@ -1,5 +1,12 @@
 # PITCH-PERFECT
 
+* [PITCH-PERFECT](#pitch-perfect)
+  * [Implementation](#implementation)
+  * [Requirements](#requirements)
+  * [How to Contribute](#how-to-contribute)
+  * [License](#license)
+  * [Other Resources](#other-resources)
+
 Pitch Perfect is the first project from the **Udacity's iOS Developer Nanodegree course** `(nd003)`.
 
 The app allows users to record a sound using the device's microphone, and then allows users to play the recorded sound with different sound modulations.
@@ -21,6 +28,11 @@ The application uses code from `AVFoundation` to record sounds from the micropho
 ![RecordSoundsViewController](repository-media/record-controller-recording.png)
 ![PlaySoundsViewController](repository-media/play-controller-playing.png)
 
+## Requirements
+
+- Xcode 9.2
+- Swift 4.0
+
 ## How to Contribute
 
 Find any typos? Have another resource you think should be included? Contributions are welcome!
@@ -36,3 +48,9 @@ It's good take a look at the [Contributing Guide](CONTRIBUTING.MD)
 ## License
 
 The contents of this repository are covered under the [MIT License](LICENSE.txt).
+
+## Other Resources
+
+- Assets : The assets package was provided from Udacity Team
+
+<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>

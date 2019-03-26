@@ -10,12 +10,16 @@ import UIKit
 import AVFoundation
 
 class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
+    
+    // MARK: - Properties
     var audioRecorder: AVAudioRecorder!
     
+    // MARK: - Outlets
     @IBOutlet weak var recordingLabel: UILabel!
     @IBOutlet weak var recordButton: UIButton!
     @IBOutlet weak var stopRecordingButton: UIButton!
     
+    // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -62,6 +66,7 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
         }
     }
     
+    // MARK: - Segues
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "stopRecording" {
             let playSoundVC = segue.destination as! PlaySoundsViewController
@@ -69,6 +74,8 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
             playSoundVC.recordedAudioURL = recordedAudioURL
         }
     }
+    
+    // MARK: - Helpers
     
     // MARK: Configure UI for Enabling and Disable Buttons and fix Labels
     func configureUi(isRecording: Bool, labelString: String){
